@@ -1,12 +1,13 @@
 import PageTabBar from '../../components/page-tab-bar.js'
 
+import HirstoryHelper from '../../helpers/history.js'
+
 export default {
   name: 'history',
   data() {
     return {
-        history: [
-          'Not Yet Implemented'
-        ]
+        history: HirstoryHelper.get(),
+        options: { hour: 'numeric', minute: 'numeric', day: 'numeric', month: 'short', year: '2-digit' }
     }
   },
   template:
@@ -18,8 +19,8 @@ export default {
           <span class="room">
             <span class="material-icons-round">history</span>
             <div>
-              {{ item }}<br>
-              <span class="p">{{ item }}</span>
+              Room {{ item.room }}<br>
+              <span class="p">{{ (new Date(item.time)).toLocaleDateString(undefined, options) }}</span>
             </div>
           </span>
       </li>
