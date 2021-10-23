@@ -11,7 +11,7 @@ export default {
   `<page title="About">
     <div class="text-center">
       <img src="./images/about/logo.svg" alt="Icon">
-      <h2>H-KA Corona</h2>
+      <h2>HKA Corona</h2>
       <p>{{ version }}</p>
       <p>
         This service is used for automated attendance tracking.

@@ -2,8 +2,8 @@
 layout: null
 ---
 {
-  "short_name": "H-KA Corona",
-  "name": "H-KA Corona",
+  "short_name": "HKA Corona",
+  "name": "HKA Corona",
   "description": "This service is used for automated attendance tracking.",
   "icons": [
     {
@@ -42,32 +42,10 @@ layout: null
       "sizes": "512x512"
     }
   ],
-  "start_url": "{{ site.baseurl }}/#/overview",
+  "start_url": "{{ site.baseurl }}/#/check-in",
   "background_color": "#121212",
   "display": "standalone",
   "orientation": "any",
   "scope": "{{ site.baseurl }}/",
-  "theme_color": "#1e1e1e",
-  "shortcuts": [
-    {
-      "name": "Overview",
-      "url": "{{ site.baseurl }}/#/overview",
-      "icons": [{ "src": "{{ site.baseurl }}/pwa/mipmap-xxxhdpi/ic_launcher.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Calendar",
-      "url": "{{ site.baseurl }}/#/calendar",
-      "icons": [{ "src": "{{ site.baseurl }}/pwa/mipmap-xxxhdpi/ic_launcher.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Analytics",
-      "url": "{{ site.baseurl }}/#/analytics",
-      "icons": [{ "src": "{{ site.baseurl }}/pwa/mipmap-xxxhdpi/ic_launcher.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Account",
-      "url": "{{ site.baseurl }}/#/account",
-      "icons": [{ "src": "{{ site.baseurl }}/pwa/mipmap-xxxhdpi/ic_launcher.png", "sizes": "192x192" }]
-    }
-  ]
+  "theme_color": "#1e1e1e"
 }

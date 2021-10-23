@@ -1,6 +1,6 @@
 ![Icon](https://raw.githubusercontent.com/Domi04151309/h-ka-corona-tracker/main/pwa/mipmap-xxxhdpi/ic_launcher.png)
 
-# H-KA Corona
+# HKA Corona
 This service is used for automated attendance tracking.
 
 ## Libraries

@@ -24,7 +24,7 @@ export default {
   template:
   `<div>
     <header>
-      <h1>H-KA Corona</h1>
+      <h1>HKA Corona</h1>
     </header>
     <main class="with app-bar tab-bar fade-in-animation">
       <slot></slot>
