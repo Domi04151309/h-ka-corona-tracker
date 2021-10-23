@@ -1,0 +1,25 @@
+{
+  "name": "h-ka-corona-tracker",
+  "version": "1.0.0",
+  "description": "This service is used for automated attendance tracking.",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-vue": "^7.20.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domi04151309/h-ka-corona-tracker.git"
+  },
+  "author": "Domi04151309",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Domi04151309/h-ka-corona-tracker/issues"
+  },
+  "homepage": "https://github.com/Domi04151309/h-ka-corona-tracker#readme"
+}

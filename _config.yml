@@ -1,0 +1,9 @@
+url: https://domi04151309.github.io/h-ka-corona-tracker
+
+include:
+  - "_*.jpg"
+
+exclude:
+  - README.md
+  - package.json
+  - package-lock.json
