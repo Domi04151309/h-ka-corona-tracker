@@ -184,40 +184,6 @@ select, input[type=text], input[type=number], textarea {
   -webkit-appearance: textfield;
   border: .1px solid var(--hover-color);
 }
-progress, .progress {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 12px;
-  align-self: center;
-  background: var(--pressed-color);
-  border-radius: var(--border-radius-1x);
-  border: 0;
-  overflow: hidden;
-}
-progress::-webkit-progress-bar {
-  background: transparent;
-}
-progress::-webkit-progress-value {
-  background: var(--accent-color-gradient);
-  border-radius: var(--border-radius-1x);
-  transition: width .5s;
-}
-progress::-moz-progress-bar {
-  background: var(--accent-color-gradient);
-  border-radius: var(--border-radius-1x);
-  transition: width .5s;
-}
-.progress {
-  display: flex;
-}
-.progress > div {
-  height: 100%;
-  margin-left: -12px;
-  background: var(--accent-color-gradient);
-  border-radius: 0 var(--border-radius-1x) var(--border-radius-1x) 0;
-  transition: width .5s;
-}
 svg {
   flex: none;
 }
@@ -324,26 +290,11 @@ svg {
 }
 
 /* UX */
-.search:empty:after {
+.history:empty:after {
   display: block;
   color: var(--text-color-secondary);
   padding: 16px;
-  text-align: center;
-  content: 'No results.'
-}
-.ux-list:empty:after {
-  display: block;
-  color: var(--text-color-secondary);
-  padding: 16px;
-  text-align: center;
-  content: 'No entries.'
-}
-.medications:empty:after {
-  display: block;
-  color: var(--text-color-secondary);
-  padding: 16px;
-  text-align: center;
-  content: 'Add medications by pressing the add button on the bottom right.'
+  content: 'There are no entries yet...'
 }
 
 /* alignment */

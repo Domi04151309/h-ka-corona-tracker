@@ -2,8 +2,6 @@ import PageTabBar from '../../components/page-tab-bar.js'
 
 import HirstoryHelper from '../../helpers/history.js'
 
-//TODO: Empty state
-
 export default {
   name: 'history',
   data() {
@@ -16,7 +14,7 @@ export default {
   `<page-tab-bar>
     <h2>History</h2>
     <p class="mb-32">See where you have been.</p>
-    <ul class="compact link-list ignore-page-padding">
+    <ul class="history compact link-list ignore-page-padding">
       <li v-for="(item, i) in history" :key="i">
           <span class="room">
             <span class="material-icons-round">history</span>

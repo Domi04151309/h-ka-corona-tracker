@@ -46,7 +46,7 @@ export default {
             if (instance.$refs.input.value.length == 8 && instance.$refs.input.value.match(/([a-z]){4}([0-9]){4}/g)) {
               JsonHelper.set('lastUser', instance.$refs.input.value)
 
-              //TODO: Check if that actually works
+              //TODO: Make sure this actually works
               fetch(
                 'https://idp.hs-karlsruhe.de/corona/coronatracker-extro.html?username=' + instance.$refs.input.value + '&location=' + room,
                 { mode: 'no-cors'}
