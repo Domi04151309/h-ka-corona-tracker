@@ -318,6 +318,10 @@ svg {
 .button-bar button:active {
   background: var(--pressed-color);
 }
+.link-list > li > span.room {
+  display: flex;
+  align-items: center;
+}
 
 /* UX */
 .search:empty:after {
@@ -340,39 +344,6 @@ svg {
   padding: 16px;
   text-align: center;
   content: 'Add medications by pressing the add button on the bottom right.'
-}
-
-/* calendar */
-#calendar button {
-  padding: 12px;
-  background: none;
-  box-shadow: none;
-  color: var(--text-color-secondary);
-}
-#calendar .no-stretch > button {
-  min-height: 64px;
-  align-items: start;
-  display: grid;
-}
-#calendar button:hover {
-  background: var(--hover-color);
-}
-#calendar button:active {
-  background: var(--pressed-color);
-}
-#calendar .controls {
-  float: right;
-}
-#calendar .controls button {
-  margin: 0;
-  padding: 8px 12px;
-}
-#calendar .highlighted {
-  background: var(--accent-color-alpha);
-  color: var(--accent-color);
-}
-#calendar .future {
-  opacity: .6;
 }
 
 /* alignment */

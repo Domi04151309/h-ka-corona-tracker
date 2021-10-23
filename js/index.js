@@ -8,9 +8,7 @@ const CheckIn = () => import('./pages/main/check-in.js')
 const History = () => import('./pages/main/history.js')
 const Info = () => import('./pages/main/info.js')
 
-const AppSettings = () => import('./pages/app-settings.js')
 const ErrorLog = () => import('./pages/log.js')
-const Help = () => import('./pages/help.js')
 const About = () => import('./pages/about.js')
 
 if (/iPhone/.test(navigator.platform)) {
@@ -27,9 +25,7 @@ const routes = [
   { path: '/check-in', component: CheckIn },
   { path: '/history', component: History },
   { path: '/info', component: Info },
-  { path: '/info/app', component: AppSettings },
-  { path: '/info/app/log', component: ErrorLog },
-  { path: '/info/help', component: Help },
+  { path: '/info/log', component: ErrorLog },
   { path: '/info/about', component: About }
 ]
 
