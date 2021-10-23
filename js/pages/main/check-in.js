@@ -1,6 +1,7 @@
 /*global Vue*/
 
 import PageTabBar from '../../components/page-tab-bar.js'
+import Modal from '../../components/modal.js'
 import ModalInput from '../../components/modal-input.js'
 
 import JsonHelper from '../../helpers/json.js'
@@ -42,12 +43,47 @@ export default {
           inputType: 'text',
           initialValue: JsonHelper.get('lastUser', ()  => ''),
           positiveFunction: () => {
-            //TODO: Validate inputs
-            //TODO: Send actual request
-            //TODO: Display request result
-            JsonHelper.set('lastUser', instance.$refs.input.value)
-            HirstoryHelper.add(room)
-            console.log('https://idp.hs-karlsruhe.de/corona/coronatracker-extro.html?username=' + instance.$refs.input.value + '&location=' + room)
+            if (instance.$refs.input.value.length == 8 && instance.$refs.input.value.match(/([a-z]){4}([0-9]){4}/g)) {
+              JsonHelper.set('lastUser', instance.$refs.input.value)
+
+              //TODO: Check if that actually works
+              fetch(
+                'https://idp.hs-karlsruhe.de/corona/coronatracker-extro.html?username=' + instance.$refs.input.value + '&location=' + room,
+                { mode: 'no-cors'}
+              ).then(response => {
+                console.log(response)
+                if (response.ok || response.status == 0) {
+                  HirstoryHelper.add(room)
+                } else {
+                  throw Error();
+                }
+              }).catch(e => {
+                console.warn(e);
+                const ComponentClass2 = Vue.extend(Modal)
+                const instance2 = new ComponentClass2({
+                  propsData: {
+                    title: 'Failed Checking In',
+                    message: 'It was not possible to send the request. Please try again.',
+                    negativeButton: false
+                  }
+                })
+                instance2.$mount()
+                this.$root.$el.appendChild(instance2.$el)
+              })
+            } else {
+              setTimeout(() => {
+                const ComponentClass2 = Vue.extend(Modal)
+                const instance2 = new ComponentClass2({
+                  propsData: {
+                    title: 'Invalid Username',
+                    message: 'Your input was not a valid username.',
+                    negativeButton: false
+                  }
+                })
+                instance2.$mount()
+                this.$root.$el.appendChild(instance2.$el)
+              }, 1000)
+            }
           }
         }
       })

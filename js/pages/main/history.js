@@ -2,6 +2,8 @@ import PageTabBar from '../../components/page-tab-bar.js'
 
 import HirstoryHelper from '../../helpers/history.js'
 
+//TODO: Empty state
+
 export default {
   name: 'history',
   data() {
