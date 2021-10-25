@@ -7,6 +7,10 @@ export default {
       type: String,
       default: ''
     },
+    text: {
+      type: String,
+      default: ''
+    },
     positiveText: {
       type: String,
       default: 'Ok'
@@ -29,6 +33,7 @@ export default {
     <div class="modal-background" v-on:click="negative()"></div>
     <div class="modal-content card">
       <h2>{{ title }}</h2>
+      <p>{{ text }}</p>
       <input ref="input" :type="inputType" :value="initialValue" autocomplete="off" v-on:keyup.enter="positive()"></input>
       <div class="button-bar">
         <button v-on:click="negative()" type="button">{{ negativeText }}</button>

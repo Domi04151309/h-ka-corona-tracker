@@ -40,8 +40,10 @@ export default {
       const instance = new ComponentClass({
         propsData: {
           title: 'Check In At ' + room,
+          text: 'Please enter your iz username below.',
           inputType: 'text',
           initialValue: JsonHelper.get('lastUser', ()  => ''),
+          positiveText: 'Check-In',
           positiveFunction: () => {
             if (instance.$refs.input.value.length == 8 && instance.$refs.input.value.match(/([a-z]){4}([0-9]){4}/g)) {
               JsonHelper.set('lastUser', instance.$refs.input.value)
@@ -54,21 +56,31 @@ export default {
                 console.log(response)
                 if (response.ok || response.status == 0) {
                   HirstoryHelper.add(room)
+                  const ComponentClass2 = Vue.extend(Modal)
+                  const instance2 = new ComponentClass2({
+                    propsData: {
+                      title: 'Checked In Successfully',
+                      message: 'You are now checked in at ' + room + '.',
+                      negativeButton: false
+                    }
+                  })
+                  instance2.$mount()
+                  this.$root.$el.appendChild(instance2.$el)
                 } else {
                   throw Error();
                 }
               }).catch(e => {
                 console.warn(e);
-                const ComponentClass2 = Vue.extend(Modal)
-                const instance2 = new ComponentClass2({
+                const ComponentClass3 = Vue.extend(Modal)
+                const instance3 = new ComponentClass3({
                   propsData: {
                     title: 'Failed Checking In',
                     message: 'It was not possible to send the request. Please try again.',
                     negativeButton: false
                   }
                 })
-                instance2.$mount()
-                this.$root.$el.appendChild(instance2.$el)
+                instance3.$mount()
+                this.$root.$el.appendChild(instance3.$el)
               })
             } else {
               setTimeout(() => {
