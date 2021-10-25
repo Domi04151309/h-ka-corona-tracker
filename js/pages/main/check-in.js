@@ -49,9 +49,11 @@ export default {
               JsonHelper.set('lastUser', instance.$refs.input.value)
 
               //TODO: Make sure this actually works
+              const controller = new AbortController()
+              setTimeout(() => controller.abort(), 3000)
               fetch(
                 'https://idp.hs-karlsruhe.de/corona/coronatracker-extro.html?username=' + instance.$refs.input.value + '&location=' + room,
-                { mode: 'no-cors'}
+                { signal: controller.signal, mode: 'no-cors'}
               ).then(response => {
                 console.log(response)
                 if (response.ok || response.status == 0) {
@@ -67,7 +69,7 @@ export default {
                   instance2.$mount()
                   this.$root.$el.appendChild(instance2.$el)
                 } else {
-                  throw Error();
+                  throw Error()
                 }
               }).catch(e => {
                 console.warn(e);
