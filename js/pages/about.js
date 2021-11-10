@@ -23,6 +23,10 @@ export default {
         <h3>Material Icons</h3>
         <p>Apache License 2.0</p>
       </a>
+      <a rel="nofollow noopener noreferrer" target="_blank" href="https://raw.githubusercontent.com/davidshimjs/qrcodejs/master/LICENSE" class="card p-16">
+        <h3>QRCode.js</h3>
+        <p>MIT License</p>
+      </a>
       <a rel="nofollow noopener noreferrer" target="_blank" href="https://raw.githubusercontent.com/vuejs/vue-router/dev/LICENSE" class="card p-16">
         <h3>Vue Router</h3>
         <p>MIT License</p>

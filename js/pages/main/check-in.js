@@ -20,6 +20,24 @@ export default {
     <h2>Check-In</h2>
     <p class="mb-32">Choose an item from the list below.</p>
     <ul class="compact link-list ignore-page-padding">
+      <li>
+          <span class="room" v-on:click="onManualCheckInClicked()">
+            <span class="material-icons-round">api</span>
+            <div>
+              Manual Check-In<br>
+              <span class="p">Fill in the form yourself</span>
+            </div>
+          </span>
+      </li>
+      <li v-if="location.hostname == 'localhost'">
+          <span class="room" v-on:click="onItemClicked('Test')">
+            <span class="material-icons-round">code</span>
+            <div>
+              Test<br>
+              <span class="p">Click to check in</span>
+            </div>
+          </span>
+      </li>
       <li v-for="(item, i) in rooms" :key="i">
           <span class="room" v-on:click="onItemClicked(item)">
             <span class="material-icons-round">room</span>
@@ -35,6 +53,9 @@ export default {
     PageTabBar
   },
   methods: {
+    onManualCheckInClicked() {
+      window.open('https://idp.hs-karlsruhe.de/corona/', '_blank').focus()
+    },
     onItemClicked(room) {
       const ComponentClass = Vue.extend(ModalInput)
       const instance = new ComponentClass({
@@ -98,6 +119,11 @@ export default {
                 this.$root.$el.appendChild(instance2.$el)
               }, 1000)
             }
+          },
+          neutralButton: true,
+          neutralText: 'QR',
+          neutralFunction: () => {
+            setTimeout(() => this.$router.push('/check-in/qr/' + room), 1000)
           }
         }
       })

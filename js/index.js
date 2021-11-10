@@ -8,6 +8,8 @@ const CheckIn = () => import('./pages/main/check-in.js')
 const History = () => import('./pages/main/history.js')
 const Info = () => import('./pages/main/info.js')
 
+const QR = () => import('./pages/qr.js')
+
 const ErrorLog = () => import('./pages/log.js')
 const About = () => import('./pages/about.js')
 
@@ -23,6 +25,7 @@ const routes = [
   { path: '/', redirect: '/check-in' },
   { path: '*', component: Unknown },
   { path: '/check-in', component: CheckIn },
+  { path: '/check-in/qr/:room', component: QR },
   { path: '/history', component: History },
   { path: '/info', component: Info },
   { path: '/info/log', component: ErrorLog },

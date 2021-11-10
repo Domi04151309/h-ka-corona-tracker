@@ -524,6 +524,26 @@ footer .router-link-active {
   margin: -8px 0;
   padding: 8px;
 }
+.modal-content > .button-bar.s {
+  display: flex;
+  margin-top: 16px;
+}
+.modal-content > .button-bar.s > button {
+  margin: -4px 0;
+  padding: 8px;
+}
+.modal-content > .button-bar.s > button.ml-a {
+  margin-left: auto;
+}
+
+/* QR code */
+.qr-container {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 16px;
+  background: #fff;
+  border: 8px solid white;
+}
 
 /* account */
 #profile-icon {

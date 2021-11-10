@@ -1,5 +1,4 @@
 export default [
-  'Test',
   'MU06',
   'MU11',
   'F211',

@@ -19,6 +19,10 @@ export default {
       type: String,
       default: 'Cancel'
     },
+    neutralText: {
+      type: String,
+      default: 'Neutral'
+    },
     positiveFunction: {
       type: Function,
       default: () => {}
@@ -26,6 +30,14 @@ export default {
     negativeFunction: {
       type: Function,
       default: () => {}
+    },
+    neutralFunction: {
+      type: Function,
+      default: () => {}
+    },
+    neutralButton: {
+      type: Boolean,
+      default: false
     }
   },
   template:
@@ -35,8 +47,9 @@ export default {
       <h2>{{ title }}</h2>
       <p>{{ text }}</p>
       <input ref="input" :type="inputType" :value="initialValue" autocomplete="off" v-on:keyup.enter="positive()"></input>
-      <div class="button-bar">
-        <button v-on:click="negative()" type="button">{{ negativeText }}</button>
+      <div class="button-bar s">
+        <button v-if="neutralButton" v-on:click="neutral()" type="button">{{ neutralText }}</button>
+        <button class="ml-a" v-on:click="negative()" type="button">{{ negativeText }}</button>
         <button v-on:click="positive()" type="button">{{ positiveText }}</button>
       </div>
     </div>
@@ -48,6 +61,10 @@ export default {
     },
     negative() {
       this.negativeFunction()
+      this.$el.parentNode.removeChild(this.$el)
+    },
+    neutral() {
+      this.neutralFunction()
       this.$el.parentNode.removeChild(this.$el)
     }
   }
